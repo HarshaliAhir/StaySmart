@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - StaySmart</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <!-- Login Form -->
+    <section>
+        <h2>Login to StaySmart</h2>
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Social Login Options -->
+        <div>
+            <p>Or login with:</p>
+            <a href="{% url 'social:begin' 'google' %}">Google</a> |
+            <a href="{% url 'social:begin' 'facebook' %}">Facebook</a>
+        </div>
+
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
+    </section>
+
+</body>
+</html>

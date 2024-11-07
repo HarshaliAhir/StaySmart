@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to StaySmart</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>StaySmart</h1>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'search' %}">Search Hotels</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <section>
+        <h2>Find the best hotel deals with StaySmart</h2>
+        <p>Enjoy luxury and comfort wherever you go.</p>
+        <a href="{% url 'search' %}" class="cta-button">Start Booking</a>
+    </section>
+
+</body>
+</html>
